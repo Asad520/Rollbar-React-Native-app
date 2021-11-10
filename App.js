@@ -10,8 +10,7 @@ import {Client} from 'rollbar-react-native';
 
 const App = () => {
   const [errorText, setErrorText] = useState('New error text!');
-  useEffect(() => {}, []);
-  const rollbar = new Client('3b5c885db8a348a481bb4527f1eab1f8');
+  const [rollbar] = useState(new Client('3b5c885db8a348a481bb4527f1eab1f8'));
 
   const throwError = () => {
     rollbar.log(errorText);
